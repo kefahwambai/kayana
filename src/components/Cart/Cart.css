@@ -1,0 +1,30 @@
+.cart {
+padding: 20px;
+}
+
+.cart-item {
+display: flex;
+align-items: center;
+border-bottom: 1px solid #ddd;
+padding: 10px 0;
+}
+
+.cart-item img {
+width: 50px;
+height: auto;
+margin-right: 20px;
+}
+
+.cart-item div {
+display: flex;
+flex-direction: column;
+}
+
+.cart-item button {
+padding: 5px;
+background-color: #dc3545;
+color: white;
+border: none;
+cursor: pointer;
+}
+  

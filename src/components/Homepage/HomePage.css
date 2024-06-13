@@ -1,0 +1,330 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lora', serif;
+  background-color: #f4f4f9;
+}
+
+.headerTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lora', serif;
+  color: #ffffff;
+}
+
+.header-container {
+  position: relative;
+  margin-top: -2.55rem !important;
+  height: 80vh !important;
+}
+
+/* Slideshow Styles */
+.content-width {
+  width: 86%;
+  margin: 0 auto;
+  margin-top: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.slideshow-items {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.item.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.item-image-container {
+  position: relative;
+  width: 42%;
+  overflow: hidden;
+}
+
+.item-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #22222A;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.item-image {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  display: block;
+  transition: opacity 0.3s ease-out 0.45s;
+}
+
+.item.active .item-image {
+  opacity: 1;
+}
+
+.item.active .item-image-container::before {
+  opacity: 0.8;
+}
+
+/* Enhanced Item Description Styles */
+.item-description {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  width: 45%;
+  padding: 20px;
+  color: #000000;
+  line-height: 1.8;
+  transform: translateY(-50%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.item-description span {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.item.active .item-description {
+  transform: translateY(0);
+}
+
+.item-header {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  z-index: 100;
+  font-size: 3vw;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-header .vertical-part {
+  margin: 0 4px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.vertical-part b {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.item-header .vertical-part b {
+  transition: transform 0.5s;
+}
+
+.item-description .vertical-part b {
+  transition: transform 0.21s;
+}
+
+.item.active .item-header .vertical-part b,
+.item.active .item-description .vertical-part b {
+  transform: translateY(0);
+}
+
+/* Controls Styles */
+.controls {
+  position: relative;
+  text-align: right;
+  margin-right: 15rem;
+  z-index: 1000;
+  margin-top: -15rem;
+}
+
+.controls ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.controls ul li {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 3px;
+  background: #bdbdd5;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.controls ul li.active {
+  background: #6a6a77;
+}
+
+/* FTCO Section Styles */
+.ftco-section {
+  padding: 4rem 0;
+  margin-top: 10rem;
+}
+
+.ftco-category .container {
+  max-width: 1200px;
+}
+
+.category-wrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.category-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.category-wrap .text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+.category-wrap .text h2 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.category-wrap .text a {
+  color: white;
+  text-decoration: none;
+}
+
+.category-wrap-2 {
+  padding: 100px;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-wrap-2 .text h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.category-wrap-2 .text p {
+  font-size: 1.2em;
+}
+
+.category-wrap-2 .text a {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: white;
+  color: #82ae46;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .slideshow {
+    height: 300px;
+  }
+
+  .item {
+    height: 300px;
+  }
+
+  .item-header {
+    font-size: 2em;
+  }
+
+  .item-description {
+    font-size: 1em;
+  }
+}
+
+#planner {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1597407198530-b84dd7206205?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif; 
+  }
+  
+  .plaHead {
+   padding: 4rem;
+  }
+  
+  .plaHead h1 {
+    color: #333;
+    font-size: 5em;
+  }
+  
+  .plaHead p {
+    color: #787676;
+    font-size: 1em;
+    
+  }
+  
+  .plancont {
+    margin-top: 13em;
+    display: flex;
+    color: #787676;
+    justify-content: space-around;
+  }
+  
+  .plancont h1 {
+    font-size: 2.5rem;
+    font-weight: 450;
+  }
+  
+  
+  .plancont div {
+    text-align: center;
+  }
+  
+  .plancont h3 {
+    font-weight: 750;
+    color: #000;
+    font-size: 1.6rem;
+  }
+  
